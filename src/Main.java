@@ -24,7 +24,8 @@ public class Main {
         hand = main.createHand(words);
         hand.sortByRank();
 
-
+        Dealer dealer = new Dealer();
+        dealer.checkHand(hand);
 
     }
 
