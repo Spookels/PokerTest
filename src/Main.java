@@ -22,6 +22,7 @@ public class Main {
 
         words = main.InputValidation(input);
         hand = main.createHand(words);
+        hand.sortByRank();
 
 
 
