@@ -4,6 +4,7 @@ import java.util.*;
 public class Main {
 
     public static String[] words;
+    public static Hand hand;
 
     public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
@@ -20,6 +21,8 @@ public class Main {
         Main main = new Main();
 
         words = main.InputValidation(input);
+        hand = main.createHand(words);
+
 
 
     }
@@ -53,5 +56,25 @@ public class Main {
         }
 
         return words;
+    }
+
+    public Hand createHand(String[] words){
+        Card[] cards = new Card[5];
+
+        for (int i=0; i<cards.length; i++){
+            if(words[i].trim().length() == 2){
+                Card myCard = new Card(String.valueOf(words[i].trim().charAt(0)), words[i].trim().charAt(1));
+                cards[i] = myCard;
+
+            }else if(words[i].trim().length() == 3){
+                Card myCard = new Card(words[i].trim().substring(0,2), words[i].trim().charAt(2));
+                cards[i] = myCard;
+            }
+
+        }
+
+        return hand = new Hand(cards);
+
+
     }
 }
