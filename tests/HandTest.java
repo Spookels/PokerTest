@@ -8,7 +8,7 @@ public class HandTest {
     private Card card2 = new Card("J", 'C');
     private Card card3 = new Card("10", 'S');
     private Card card4 = new Card("3", 'H');
-    private Card card5 = new Card("3", 'D');
+    private Card card5 = new Card("4", 'D');
 
     private Card card6 = new Card("A", 'C');
     private Card card7 = new Card("Q", 'H');
@@ -37,6 +37,14 @@ public class HandTest {
     public void sortByRank() {
         hand.sortByRank();
 
+        assertNotNull(hand);
+
         assertEquals(card2, hand.getCards()[0]);
+        assertEquals(card3, hand.getCards()[1]);
+        assertEquals(card5, hand.getCards()[2]);
+        assertEquals(card4, hand.getCards()[3]);
+        assertEquals(card1, hand.getCards()[4]);
+
+
     }
 }

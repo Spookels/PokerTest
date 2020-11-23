@@ -9,6 +9,7 @@ public class Dealer {
     public boolean straight = false;
     public boolean threeOfAKind = false;
     public int pairCount;
+    public String display = "";
 
     public String checkHand(Hand hand){
         Arrays.stream(hand.getCards())
@@ -70,35 +71,37 @@ public class Dealer {
 
     public String Display(){
         if(royalFLush){
-            System.out.println("Royal Flush");
+            display = "Royal Flush";
         }
         else if(straightFlush){
-            System.out.println("Straight Flush");
+            display = "Straight Flush";
         }
         else if(fourOfAKind){
-            System.out.println("Four of a kind");
+            display = "Four of a kind";
         }
         else if(threeOfAKind && pairCount == 1){
-            System.out.println("Full House");
+            display = "Full House";
         }
         else if(flush){
-            System.out.println("Flush");
+            display = "Flush";
         }
         else if(straight) {
-            System.out.println("Straight");
+            display = "Straight";
         }
         else if(threeOfAKind){
-            System.out.println("Three of a kind");
+            display = "Three of a kind";
         }
         else if(pairCount == 2){
-            System.out.println("Two Pair");
+            display = "Two Pair";
         }
         else if(pairCount == 1){
-            System.out.println("One Pair");
+            display = "One Pair";
         }
         else{
-            System.out.println("High Card");
+            display = "High Card";
         }
-        return "";
+
+        System.out.println(display);
+        return display;
     }
 }
